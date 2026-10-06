@@ -3,11 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>我的中文网站</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="HYX1881 的个人中文网站">
+
+    <title>HYX1881 · 我的中文网站</title>
 
     <style>
+
+        /* =========================
+           基础设置
+        ========================= */
+
         * {
             box-sizing: border-box;
         }
@@ -18,226 +28,394 @@
 
         body {
             margin: 0;
+            padding: 0;
+
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
                 "Segoe UI",
                 "Microsoft YaHei",
                 "PingFang SC",
+                Arial,
                 sans-serif;
 
-            color: #1f2937;
             background: #f5f7fb;
+            color: #1f2937;
+
             line-height: 1.8;
         }
 
-        /* ===== 顶部 ===== */
 
-        header {
+        /* =========================
+           顶部 Hero
+        ========================= */
+
+        .hero {
             background:
-                linear-gradient(135deg, #111827, #312e81, #4f46e5);
+                linear-gradient(
+                    135deg,
+                    #111827 0%,
+                    #312e81 50%,
+                    #4f46e5 100%
+                );
 
             color: white;
-            padding: 70px 20px 90px;
+
+            padding: 70px 20px 85px;
         }
 
-        .header-content {
+        .hero-inner {
+            width: 100%;
             max-width: 1000px;
-            margin: auto;
+
+            margin: 0 auto;
         }
 
-        .site-name {
-            font-size: 18px;
-            font-weight: 600;
-            opacity: 0.85;
-            margin-bottom: 20px;
+        .logo {
+            font-size: 15px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: rgba(255,255,255,0.75);
+
+            margin-bottom: 22px;
         }
 
-        header h1 {
+        .hero h1 {
             margin: 0;
-            font-size: clamp(38px, 8vw, 68px);
-            line-height: 1.15;
-            letter-spacing: -2px;
+
+            font-size: 48px;
+
+            line-height: 1.25;
+
+            letter-spacing: -1px;
         }
 
-        header p {
-            margin-top: 22px;
+        .hero-description {
             max-width: 650px;
+
+            margin-top: 22px;
+
             font-size: 18px;
-            color: rgba(255, 255, 255, 0.82);
+
+            color: rgba(255,255,255,0.82);
         }
 
-        .button {
+        .hero-button {
             display: inline-block;
-            margin-top: 25px;
+
+            margin-top: 28px;
+
             padding: 11px 22px;
+
             border-radius: 999px;
+
             background: white;
+
             color: #3730a3;
+
             text-decoration: none;
-            font-weight: 600;
+
+            font-weight: 700;
+
             transition: 0.25s;
         }
 
-        .button:hover {
+        .hero-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* ===== 主体 ===== */
-
-        main {
-            max-width: 1000px;
-            margin: -40px auto 0;
-            padding: 0 20px 60px;
-            position: relative;
-        }
-
-        /* ===== 文章区域 ===== */
-
-        .section-title {
-            font-size: 26px;
-            margin: 0 0 20px;
-        }
-
-        .articles {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .article {
-            background: white;
-            padding: 28px;
-            border-radius: 18px;
 
             box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.06);
-
-            transition: 0.25s;
+                0 12px 30px rgba(0,0,0,0.2);
         }
 
-        .article:hover {
+
+        /* =========================
+           主体
+        ========================= */
+
+        .main {
+            width: 100%;
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            padding: 45px 20px 70px;
+        }
+
+
+        /* =========================
+           标题
+        ========================= */
+
+        .section-title {
+            margin: 0 0 22px;
+
+            font-size: 28px;
+
+            color: #111827;
+        }
+
+
+        /* =========================
+           文章列表
+        ========================= */
+
+        .articles {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 22px;
+        }
+
+
+        /* =========================
+           文章卡片
+        ========================= */
+
+        .article-card {
+            display: block;
+
+            width: 100%;
+
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 18px;
+
+            border: 1px solid #e5e7eb;
+
+            box-shadow:
+                0 8px 25px rgba(15,23,42,0.05);
+
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
+        }
+
+        .article-card:hover {
             transform: translateY(-5px);
 
             box-shadow:
-                0 15px 35px rgba(15, 23, 42, 0.1);
+                0 15px 35px rgba(15,23,42,0.1);
         }
+
+
+        /* =========================
+           标签
+        ========================= */
 
         .tag {
             display: inline-block;
-            padding: 4px 10px;
+
+            padding: 4px 11px;
+
             border-radius: 999px;
 
             background: #eef2ff;
+
             color: #4338ca;
 
             font-size: 13px;
-            font-weight: 600;
+
+            font-weight: 700;
         }
 
-        .article h3 {
-            margin: 15px 0 8px;
+
+        /* =========================
+           文章标题
+        ========================= */
+
+        .article-title {
+            margin: 14px 0 5px;
+
             font-size: 22px;
-        }
 
-        .article h3 a {
+            line-height: 1.4;
+
             color: #111827;
-            text-decoration: none;
         }
 
-        .article h3 a:hover {
-            color: #4f46e5;
-        }
+
+        /* =========================
+           日期
+        ========================= */
 
         .date {
-            color: #9ca3af;
             font-size: 14px;
+
+            color: #9ca3af;
         }
 
-        .article p {
+
+        /* =========================
+           文章简介
+        ========================= */
+
+        .article-text {
+            margin-top: 15px;
+
             color: #6b7280;
+
+            font-size: 16px;
         }
+
+
+        /* =========================
+           阅读更多
+        ========================= */
 
         .read-more {
+            display: inline-block;
+
+            margin-top: 10px;
+
             color: #4f46e5;
+
+            font-weight: 700;
+
             text-decoration: none;
-            font-weight: 600;
         }
 
-        /* ===== 关于我 ===== */
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           关于我
+        ========================= */
 
         .about {
-            margin-top: 35px;
-            padding: 35px;
+            margin-top: 40px;
+
+            padding: 30px;
 
             background: white;
+
             border-radius: 18px;
 
+            border: 1px solid #e5e7eb;
+
             box-shadow:
-                0 8px 30px rgba(15, 23, 42, 0.06);
+                0 8px 25px rgba(15,23,42,0.05);
         }
 
         .about h2 {
             margin-top: 0;
+
+            font-size: 25px;
         }
 
         .about p {
+            margin-bottom: 0;
+
             color: #6b7280;
         }
 
-        /* ===== 页脚 ===== */
+
+        /* =========================
+           页脚
+        ========================= */
 
         footer {
             text-align: center;
+
             padding: 35px 20px;
 
             color: #9ca3af;
+
             font-size: 14px;
         }
 
-        /* ===== 手机端 ===== */
+
+        /* =========================
+           手机适配
+        ========================= */
 
         @media (max-width: 700px) {
 
-            header {
-                padding: 55px 20px 75px;
+            .hero {
+                padding:
+                    55px
+                    20px
+                    65px;
             }
 
-            header h1 {
-                letter-spacing: -1px;
+            .hero h1 {
+                font-size: 40px;
             }
 
-            header p {
+            .hero-description {
                 font-size: 16px;
+            }
+
+            .main {
+                padding:
+                    35px
+                    16px
+                    50px;
+            }
+
+            .section-title {
+                font-size: 25px;
             }
 
             .articles {
                 grid-template-columns: 1fr;
             }
 
-            main {
-                margin-top: -30px;
+            .article-card {
+                padding: 24px;
             }
 
-            .article,
             .about {
                 padding: 24px;
             }
         }
+
+
+        /* =========================
+           更小的手机
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .article-title {
+                font-size: 20px;
+            }
+        }
+
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- ===== 网站头部 ===== -->
 
-    <header>
+    <!-- =========================
+         顶部
+    ========================= -->
 
-        <div class="header-content">
+    <header class="hero">
 
-            <div class="site-name">
+        <div class="hero-inner">
+
+            <div class="logo">
                 HYX1881 · PERSONAL WEBSITE
             </div>
 
@@ -245,9 +423,185 @@
                 我的中文网站
             </h1>
 
-            <p>
-                记录生活，分享想法，保存值得留下的文字。
+            <p class="hero-description">
+                记录生活，分享想法，
+                保存值得留下的文字。
                 欢迎来到我的个人空间。
             </p>
 
-            <a href="#artic
+            <a
+                href="#articles"
+                class="hero-button">
+                开始阅读 ↓
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         主体
+    ========================= -->
+
+    <main class="main">
+
+
+        <!-- =====================
+             最新文章
+        ====================== -->
+
+        <section id="articles">
+
+            <h2 class="section-title">
+                最新文章
+            </h2>
+
+
+            <div class="articles">
+
+
+                <!-- 文章 1 -->
+
+                <article class="article-card">
+
+                    <span class="tag">
+                        随笔
+                    </span>
+
+                    <h3 class="article-title">
+                        我的第一篇文章
+                    </h3>
+
+                    <div class="date">
+                        2026年10月6日
+                    </div>
+
+                    <p class="article-text">
+                        这是我的第一篇文章。
+                        从今天开始，我将在这里记录一些文字，
+                        分享自己的想法，也保存一些值得回忆的事情。
+                    </p>
+
+                    <a
+                        href="#"
+                        class="read-more">
+                        阅读全文 →
+                    </a>
+
+                </article>
+
+
+
+                <!-- 文章 2 -->
+
+                <article class="article-card">
+
+                    <span class="tag">
+                        网站
+                    </span>
+
+                    <h3 class="article-title">
+                        我为什么做这个网站？
+                    </h3>
+
+                    <div class="date">
+                        2026年10月6日
+                    </div>
+
+                    <p class="article-text">
+                        这是一个属于我自己的互联网空间。
+                        我希望在这里发布一些文章，
+                        慢慢把这个网站建设起来。
+                    </p>
+
+                    <a
+                        href="#"
+                        class="read-more">
+                        阅读全文 →
+                    </a>
+
+                </article>
+
+
+
+                <!-- 文章 3 -->
+
+                <article class="article-card">
+
+                    <span class="tag">
+                        记录
+                    </span>
+
+                    <h3 class="article-title">
+                        这里以后会写什么？
+                    </h3>
+
+                    <div class="date">
+                        2026年10月6日
+                    </div>
+
+                    <p class="article-text">
+                        这里以后可以用来发布我的日常、
+                        游戏体验、学习记录、旅行见闻，
+                        或者任何我想留下的文字。
+                    </p>
+
+                    <a
+                        href="#"
+                        class="read-more">
+                        阅读全文 →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================
+             关于我
+        ====================== -->
+
+        <section class="about">
+
+            <h2>
+                关于我
+            </h2>
+
+            <p>
+                你好，我是这个网站的作者。
+                这是我的个人网站。
+                以后我会在这里发布文章、记录生活，
+                以及分享一些我感兴趣的内容。
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         页脚
+    ========================= -->
+
+    <footer>
+
+        © 2026 HYX1881 · 我的中文网站
+
+        <br>
+
+        Built with HTML & GitHub Pages
+
+    </footer>
+
+
+</body>
+
+</html>
